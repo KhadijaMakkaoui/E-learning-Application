@@ -4,6 +4,7 @@
     list-style: none;
     box-sizing: border-box;
 }
-.sign-in{
-    
+.background-gradient{
+    background: linear-gradient(69.66deg, #00C1FE 19.39%, #FAFFC1 96.69%);
+
 }

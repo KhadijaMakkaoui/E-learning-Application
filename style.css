@@ -1,11 +1,6 @@
-*{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    box-sizing: border-box;
-    overflow: hidden;
-}
 .background-gradient{
     background: linear-gradient(69.66deg, #00C1FE 19.39%, #FAFFC1 96.69%);
-
+}
+.background-sidebar{
+    background-color: #FAFFC1;
 }

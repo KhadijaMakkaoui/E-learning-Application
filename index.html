@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +9,42 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./bootsrap/css/bootstrap.min.css">
 </head>
-<body>
+
+<body class="sign-in">
+    <div class="container">
+
+        <form>
+            <div class="mb-5">
+                <img src="./images/logo_eclass.png" class="img-fluid" id="img-logo" alt="logo">
+ 
+            </div>
+            <div class="mb-5 text-center">
+                <h1>SIGN IN</h1>
+                <p>Enter your credentials to access your account</p>
+            </div>
+            <div class="mb-4">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Enter your email">
+            </div>
+            <div class="mb-4">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1"
+                    placeholder="Enter your password">
+            </div>
+            <div class="d-grid mb-4">
+                <button type="submit" class="btn btn-info text-white">Submit</button>
+            </div>
+            <div class="mb-4 text-center">
+                <span>
+                    Forgot your password?
+                    <a href="#" class="link-info ">Reset Password</a>
+                </span>
+            </div>
+        </form>
+    </div>
+
     <script src="./bootsrap/js/bootstrap.min.js"></script>
-    
 </body>
+
 </html>

@@ -4,3 +4,13 @@
 .background-sidebar{
     background-color: #FAFFC1;
 }
+
+.nav-item{ 
+    width: 100%;
+    padding:0 10px ;
+    border-radius: 3px;
+    
+}
+.nav-item:hover{
+    background-color: #00C1FE;
+}

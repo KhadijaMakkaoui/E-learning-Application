@@ -14,3 +14,18 @@
 .nav-item:hover{
     background-color: #00C1FE;
 }
+#card-student{
+    background-color: #F0F9FF;
+}
+#card-course{
+    background-color: #FEF6FB;
+}
+#card-pay{
+    background-color: #FEFBEC;
+}
+#card-user{
+    background: linear-gradient(110.42deg, #00C1FE 18.27%, #FAFFC1 91.84%);
+}
+.card{
+    margin-bottom: 10px;
+}

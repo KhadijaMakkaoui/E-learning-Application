@@ -5,7 +5,7 @@
     background-color: #FAFFC1;
 }
 
-.nav-item{ 
+.nav-item, .nav-link{ 
     width: 100%;
     padding:0 10px ;
     border-radius: 3px;

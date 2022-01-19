@@ -8,13 +8,15 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="/bootsrap/bootstrap.min.css" />
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
-    <link rel="stylesheet" href="bootsrap\font\bootstrap-icons.css" />
+    <link rel="stylesheet" href="bootsrap/font/bootstrap-icons.css" />
   </head>
   <body>
     <div class="container-fluid vh-100">
       <div class="row flex-nowrap">
-        <!-- ------------sidebar----------------- -->
-        <div class="col-3 col-md-3 col-lg-3 col-xl-2 px-0 vh-100 background-sidebar ">
+        <!--        sidebar        -->
+        <div
+          class="col-3 col-md-3 col-lg-3 col-xl-2 px-0 vh-100 background-sidebar"
+        >
           <div class="">
             <img
               src="/images/logo_eclass.png"
@@ -37,13 +39,16 @@
               <h6 class="text-info fs">Admin</h6>
             </div>
             <!-- <div class="d-flex flex-column align-items-lg-center px-3 pt-2 text-white min-vh-100"> -->
-            <small>
+            <div class="small">
               <ul
                 class="nav nav-pills flex-column align-items-center align-items-sm-start pb-5"
                 id="menu"
               >
                 <li class="nav-item">
-                  <a href="dashHome.html" class="nav-link align-middle px-0 link-dark">
+                  <a
+                    href="dashHome.html"
+                    class="nav-link align-middle px-0 link-dark"
+                  >
                     <i class="fs-6 bi-house"></i>
                     <span class="d-none d-sm-inline">Home</span>
                   </a>
@@ -59,7 +64,10 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="dashStudents.html" class="nav-link px-0 align-middle link-dark">
+                  <a
+                    href="dashStudents.html"
+                    class="nav-link active px-0 align-middle link-dark"
+                  >
                     <i class="fs-6 bi-mortarboard"></i>
                     <span class="ms-1 d-none d-sm-inline">Students</span></a
                   >
@@ -67,8 +75,8 @@
                 <li class="nav-item">
                   <a
                     href="dashPayment.html"
-                    
-                    class="nav-link px-0 align-middle link-dark">
+                    class="nav-link px-0 align-middle link-dark"
+                  >
                     <i class="fs-6 bi-currency-dollar"></i>
                     <span class="ms-1 d-none d-sm-inline">Payment</span>
                   </a>
@@ -100,10 +108,10 @@
                   </a>
                 </li>
               </ul>
-            </small>
+            </div>
           </div>
         </div>
-        <!-- -----------content area---------- -->
+        <!--        content area         -->
         <div class="col-9 col-md-9 col-lg-9 col-xl-10">
           <nav class="navbar row mx-1">
             <div class="col-2 d-flex flex-row w-100 justify-content-between">
@@ -112,7 +120,7 @@
                   <i class="fs-5 bi-caret-left-square"></i>
                 </a>
               </div>
-              <div class="input-group" style="width:170px;">
+              <div class="input-group" style="width: 170px">
                 <input
                   type="text"
                   class="form-control"
@@ -131,18 +139,20 @@
           </nav>
           <main class="row mx-1" style="background-color: #f8f8f8">
             <div class="border-bottom d-flex justify-content-between">
-                        <h2>Students List</h2>
-                        <div>
-                             <a href="#" class="link-info px-2"><i class="bi bi-arrow-down-up"></i></a>
-                            <input type="button" class="btn text-light" value="ADD NEW STUDENT" style="background-color:#00C1FE ;">
-                        </div>
-                         
-                    </div>
-                    <div class="table-responsive">
-                <caption>
-                    
-                   
-                </caption>
+              <h2 class=" ">Students List</h2>
+              <div class="">
+                <a href="#" class="link-info px-2"
+                  ><i class="bi bi-arrow-down-up"></i
+                ></a>
+                <input
+                  type="button"
+                  class="btn text-light"
+                  value="ADD NEW STUDENT"
+                  style="background-color: #00c1fe"
+                />
+              </div>
+            </div>
+            <div class="table-responsive">
               <table class="table">
                 <thead class="text-secondary">
                   <tr>
@@ -165,9 +175,9 @@
                     <td>0612346789</td>
                     <td>1234567898765</td>
                     <td>08-Dec,2021</td>
-                    <td style="color: #00C1FE;">
-                        <i class="bi bi-pen "></i>
-                        <i class="bi bi-trash"></i>
+                    <td style="color: #00c1fe">
+                      <i class="bi bi-pen"></i>
+                      <i class="bi bi-trash"></i>
                     </td>
                   </tr>
                   <tr style="background-color: white">
@@ -179,9 +189,9 @@
                     <td>0612346789</td>
                     <td>1234567898765</td>
                     <td>08-Dec,2021</td>
-                    <td style="color: #00C1FE;">
-                        <i class="bi bi-pen"></i>
-                        <i class="bi bi-trash"></i>
+                    <td style="color: #00c1fe">
+                      <i class="bi bi-pen"></i>
+                      <i class="bi bi-trash"></i>
                     </td>
                   </tr>
                   <tr style="background-color: white">
@@ -193,12 +203,11 @@
                     <td>0612346789</td>
                     <td>1234567898765</td>
                     <td>08-Dec,2021</td>
-                    <td style="color: #00C1FE;">
-                        <i class="bi bi-pen"></i>
-                        <i class="bi bi-trash"></i>
+                    <td style="color: #00c1fe">
+                      <i class="bi bi-pen"></i>
+                      <i class="bi bi-trash"></i>
                     </td>
                   </tr>
-                  
                 </tbody>
               </table>
             </div>

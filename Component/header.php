@@ -18,4 +18,5 @@ $header=<<<navbar
                     </div>
                 </nav>
 navbar;
+echo $header;
 ?>

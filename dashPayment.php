@@ -22,22 +22,9 @@
       ?>
       <!--          content area         -->
       <div class="col-9 col-md-9 col-lg-9 col-xl-10">
-        <nav class="navbar row">
-          <div class="col-9 col-md-9 col-lg-9 col-xl-10 d-flex flex-row w-100 justify-content-between">
-            <div>
-              <a class="link-secondary">
-                <i class="fs-5 bi-caret-left-square"></i>
-              </a>
-            </div>
-            <div class="input-group" style="width:170px;">
-              <input type="text" class="form-control" placeholder="Search .." />
-              <button class="btn btn-outline-secondary rounded-end me-2" type="button" id="button-addon2">
-                <i class="fs-6 bi-search"></i>
-              </button>
-              <i class="fs-5 bi-bell text-secondary mt-1"></i>
-            </div>
-          </div>
-        </nav>
+      <?php
+          include 'Component/header.php';
+      ?>
         <main class="row" style="background-color: #f8f8f8">
             <div class="border-bottom d-flex justify-content-between">
               <h2>Payment Details</h2>

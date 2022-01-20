@@ -14,14 +14,13 @@ $sidebar=<<<sidebar
         <h5 class="d-none d-sm-inline">Admin name</h5>
         <h6 class="text-info fs">Admin</h6>
     </div>
-    <!-- <div class="d-flex flex-column align-items-lg-center px-3 pt-2 text-white min-vh-100"> -->
     <div class="small">
         <ul class="nav nav-pills flex-column  align-items-center align-items-sm-start pb-5"
             id="menu">
 
             <li class="nav-item">
 
-                <a href="dashHome.html" class="nav-link align-middle px-0  link-dark active">
+                <a href="./dashHome.php" class="nav-link align-middle px-0  link-dark active">
                     <i class="fs-6 bi-house"></i>
                     <span class="d-none d-sm-inline">Home</span>
                 </a>
@@ -33,12 +32,12 @@ $sidebar=<<<sidebar
                 </a>
             </li>
             <li class="nav-item">
-                <a href="dashStudents.html" class="nav-link px-0 align-middle link-dark ">
+                <a href="./dashStudents.php" class="nav-link px-0 align-middle link-dark ">
                     <i class="fs-6 bi-mortarboard"></i> <span
                         class="ms-1 d-none d-sm-inline">Students</span></a>
             </li>
             <li class="nav-item">
-                <a href="dashPayment.html" data-bs-toggle="collapse"
+                <a href="./dashPayment.php" data-bs-toggle="collapse"
                     class="nav-link px-0 align-middle link-dark ">
                     <i class="fs-6 bi-currency-dollar"></i> <span
                         class="ms-1 d-none d-sm-inline">Payment</span>

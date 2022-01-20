@@ -19,7 +19,7 @@
         <div class="row flex-nowrap">
             <!--             sidebar              -->
             <?php
-            include 'sidebar.php';
+            include 'Component/sidebar.php';
             ?>
             <!--        content area         -->
             <div class="col">

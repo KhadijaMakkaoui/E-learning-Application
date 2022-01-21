@@ -19,6 +19,10 @@
         <div class="row flex-nowrap">
             <!--             sidebar              -->
             <?php
+
+            $activeHome="active";
+            $activeStudent=NULL;
+            $activePay=NULL;
             include 'Component/sidebar.php';
             ?>
             <!--        content area         -->

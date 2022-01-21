@@ -33,7 +33,7 @@
               </div>
 
             </div>
-          <div class="table-responsive">
+          <div class="table-responsive " style="max-height: 400px;">
 
             <table class="table table-striped">
               <thead class="text-secondary">
@@ -46,45 +46,22 @@
                   <th scope="col">Date of admission</th>
                   <th scope="col"></th>
                 </tr>
-              </thead>
+              </thead> 
               <tbody>
-                <tr>
-
-                  <td>Karthi</td>
-                  <td>First</td>
-                  <td>00985767760</td>
-                  <td>1234567898765</td>
-                  <td>DHS 500,000</td>
-                  <td>08-Dec,2021</td>
-                  <td style="color: #00C1FE;">
-                    <i class="bi bi-eye"></i>
-                  </td>
-                </tr>
-                <tr>
-
-                  <td>username</td>
-                  <td>user@email.com</td>
-                  <td>0612346789</td>
-                  <td>1234567898765</td>
-                  <td>DHS 500,000</td>
-                  <td>08-Dec,2021</td>
-                  <td style="color: #00C1FE;">
-                    <i class="bi bi-eye"></i>
-                  </td>
-                </tr>
-                <tr>
-
-                  <td>username</td>
-                  <td>user@email.com</td>
-                  <td>0612346789</td>
-                  <td>1234567898765</td>
-                  <td>DHS 500,000</td>
-                  <td>08-Dec,2021</td>
-                  <td style="color: #00C1FE;">
-                    <i class="bi bi-eye"></i>
-                  </td>
-                </tr>
-
+              <?php 
+                     include './Component/ListPayment.php';
+                    foreach ($payementList as $detail) {
+                      echo '<tr>';
+                      foreach ($detail as $key => $value) {
+                          echo '<td>' . $value . '</td>'; 
+                      }
+                      echo '
+                      <td style="color: #00c1fe">
+                      <i class="bi bi-eye"></i>
+                    </td>';
+                      echo '</tr>';
+                     } 
+                  ?>
               </tbody>
             </table>
           </div>

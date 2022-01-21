@@ -20,7 +20,7 @@ $sidebar=<<<sidebar
 
             <li class="nav-item">
 
-                <a href="./dashHome.php" class="nav-link align-middle px-0  link-dark active">
+                <a href="./dashHome.php" class="nav-link align-middle px-0  link-dark $activeHome">
                     <i class="fs-6 bi-house"></i>
                     <span class="d-none d-sm-inline">Home</span>
                 </a>
@@ -32,13 +32,13 @@ $sidebar=<<<sidebar
                 </a>
             </li>
             <li class="nav-item">
-                <a href="./dashStudents.php" class="nav-link px-0 align-middle link-dark ">
+                <a href="./dashStudents.php" class="nav-link px-0 align-middle link-dark $activeStudent">
                     <i class="fs-6 bi-mortarboard"></i> <span
                         class="ms-1 d-none d-sm-inline">Students</span></a>
             </li>
             <li class="nav-item">
                 <a href="./dashPayment.php" data-bs-toggle="collapse"
-                    class="nav-link px-0 align-middle link-dark ">
+                    class="nav-link px-0 align-middle link-dark $activePay">
                     <i class="fs-6 bi-currency-dollar"></i> <span
                         class="ms-1 d-none d-sm-inline">Payment</span>
                 </a>
@@ -66,7 +66,5 @@ $sidebar=<<<sidebar
 </div>
 </div>
 sidebar;
-
 echo $sidebar;
-
 ?>

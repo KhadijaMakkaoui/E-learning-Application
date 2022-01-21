@@ -30,7 +30,7 @@
             <?php
             include 'Component/header.php';
             ?>
-                <main class="row mx-2 mt-4 justify-content-evenly">
+                <main class="row mx-2 mt-4 justify-content-evenly overflow-auto" style="max-height: 350px;">
                     <div class="card" style="width: 225px;height: 157px;" id="card-student">
                         <div class="card-body d-flex flex-column">
                             <i class="fs-1 bi-mortarboard" style="color: #74C1ED;"></i>

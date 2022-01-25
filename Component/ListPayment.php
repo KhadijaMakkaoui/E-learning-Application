@@ -8,4 +8,6 @@ $payementList = array (
     ["Name" => "Sara","schedual"=> "First","Bill"=> "76464","Amount"=> "20000 DHS","Balance"=>"500,000DHS","Date_addmission"=> "20-Janvier,2022"],
     ["Name" => "Samira","schedual"=> "First","Bill"=> "4767655","Amount"=> "20000 DHS","Balance"=>"500,000DHS","Date_addmission"=> "20-Janvier,2022"],
   );
+  echo json_encode($payementList);
+
 ?>

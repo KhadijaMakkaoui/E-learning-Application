@@ -54,7 +54,9 @@
               </thead> 
               <tbody>
               <?php 
-                     include './Component/ListPayment.php';
+                    //  include './Component/ListPayment.php';
+                    $json= file_get_contents('./json/payments.json');
+                    $payementList=json_decode($json);
                     foreach ($payementList as $detail) {
                       echo '<tr>';
                       foreach ($detail as $key => $value) {

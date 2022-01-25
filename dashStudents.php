@@ -53,7 +53,9 @@
                 </thead>
                 <tbody class="bg-white">
                   <?php 
-                     include './Component/ListStudents.php';
+                    //  include './Component/ListStudents.php';
+                    $json= file_get_contents('./json/students.json');
+                    $studentsList=json_decode($json);
                     foreach ($studentsList as $std) {
                       echo '<tr>';
                       foreach ($std as $key => $value) {

@@ -52,23 +52,25 @@
                   </tr>
                 </thead>
                 <tbody class="bg-white">
-                  <?php 
+                  <?php
                     //  include './Component/ListStudents.php';
-                    $json= file_get_contents('./json/students.json');
+                    $json = file_get_contents('./json/students.json');
                     $studentsList=json_decode($json);
-                    foreach ($studentsList as $std) {
-                      echo '<tr>';
-                      foreach ($std as $key => $value) {
-                          echo '<td>' . $value . '</td>'; 
-                      }
-                      echo '
-                      <td style="color: #00c1fe">
+                ?>
+                <?php foreach ($studentsList as $std) : ?>
+                  <tr>
+
+                    <?php foreach ($std as $key => $value) : ?>
+                      <td> <?php echo $value ?></td>
+                    <?php endforeach; ?>
+
+                    <td style="color: #00c1fe">
                       <i class="bi bi-pen"></i>
                       <i class="bi bi-trash"></i>
-                    </td>';
-                      echo '</tr>';
-                     } 
-                  ?>
+                    </td>
+                  </tr>
+                   
+                <?php endforeach; ?>
                    <!-- <tr style="background-color: white">
                     <th scope="row">
                       <img src="images/table-pic.svg" alt="user-pic" />

@@ -20,24 +20,24 @@
     <div class="row flex-nowrap">
       <!--      sidebar      -->
       <?php
-          $activeHome=NULL;
-          $activeStudent=NULL;
-          $activePay="active";
-          include 'Component/sidebar.php';
+      $activeHome = NULL;
+      $activeStudent = NULL;
+      $activePay = "active";
+      include 'Component/sidebar.php';
       ?>
       <!--          content area         -->
       <div class="col-9 col-md-9 col-lg-9 col-xl-10">
-      <?php
-          include 'Component/header.php';
-      ?>
+        <?php
+        include 'Component/header.php';
+        ?>
         <main class="row" style="background-color: #f8f8f8">
-            <div class="border-bottom d-flex justify-content-between">
-              <h2>Payment Details</h2>
-              <div>
-                <a href="#" class="link-info px-2"><i class="bi bi-arrow-down-up"></i></a>
-              </div>
-
+          <div class="border-bottom d-flex justify-content-between">
+            <h2>Payment Details</h2>
+            <div>
+              <a href="#" class="link-info px-2"><i class="bi bi-arrow-down-up"></i></a>
             </div>
+
+          </div>
           <div class="table-responsive " style="max-height: 400px;">
 
             <table class="table table-striped">
@@ -51,24 +51,24 @@
                   <th scope="col">Date of admission</th>
                   <th scope="col"></th>
                 </tr>
-              </thead> 
+              </thead>
               <tbody>
-              <?php 
-                    //  include './Component/ListPayment.php';
-                    $json= file_get_contents('./json/payments.json');
-                    $payementList=json_decode($json);
-                    foreach ($payementList as $detail) {
-                      echo '<tr>';
-                      foreach ($detail as $key => $value) {
-                          echo '<td>' . $value . '</td>'; 
-                      }
-                      echo '
-                      <td style="color: #00c1fe">
-                      <i class="bi bi-eye"></i>
-                    </td>';
-                      echo '</tr>';
-                     } 
-                  ?>
+                <?php
+                //  include './Component/ListPayment.php';
+                $json = file_get_contents('./json/payments.json');
+                $payementList = json_decode($json);
+                ?>
+                <?php foreach ($payementList as $detail) : ?>
+                  <tr>
+
+                    <?php foreach ($detail as $key => $value) : ?>
+                      <td> <?php echo $value ?></td>
+                    <?php endforeach; ?>
+
+                    <td style="color: #00c1fe"> <i class="bi bi-eye"></i></td>
+                  </tr>
+                   
+                <?php endforeach; ?>
               </tbody>
             </table>
           </div>
@@ -76,8 +76,8 @@
       </div>
     </div>
   </div>
-    <script src="/bootsrap/bootstrap.min.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+  <script src="/bootsrap/bootstrap.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
 
 </body>
 

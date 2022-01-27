@@ -33,7 +33,7 @@
                 <a href="#" class="link-info "
                   ><i class="bi bi-arrow-down-up"></i
                 ></a>
-                <a href="#" class="link-light bg-info rounded-2 px-2">
+                <a href="Addstudent.php" class="link-light bg-info rounded-2 px-2">
                 <i class="bi bi-person-plus-fill"></i>
                 </a>
               </div>
@@ -52,67 +52,33 @@
                   </tr>
                 </thead>
                 <tbody class="bg-white">
+                  <!-- Afficher la list des apprenants -->
                   <?php
                     //  include './Component/ListStudents.php';
                     $json = file_get_contents('./json/students.json');
-                    $studentsList=json_decode($json);
+                    // $json[]= '{"img":"images/table-pic.svg","Name":"test","Email":"test@gmail.com","Phone":"062939393","EnrollNumber":"3892392302019","Date_addmission":"20-Janvier,2022"}';
+
+                    $studentsList=json_decode($json,true);
+                    
                 ?>
                 <?php foreach ($studentsList as $std) : ?>
                   <tr>
-
-                    <?php foreach ($std as $key => $value) : ?>
-                      <td> <?php echo $value ?></td>
-                    <?php endforeach; ?>
-
+                    <td><img src="<?php echo $std['img'] ?>" alt="image student"></td>
+                    <td> <?php echo $std['Name'] ?></td>
+                    <td> <?php echo $std['Email'] ?></td>
+                    <td> <?php echo $std['Phone'] ?></td>
+                    <td> <?php echo $std['EnrollNumber'] ?></td>
+                    <td> <?php echo $std['Date_addmission'] ?></td>
                     <td style="color: #00c1fe">
-                      <i class="bi bi-pen"></i>
-                      <i class="bi bi-trash"></i>
+                      <a href="#" style="color: unset;"><i class="bi bi-pen"></i></a>
+                      <a href="#" style="color: unset;"><i class="bi bi-trash"></i></a>
                     </td>
                   </tr>
                    
                 <?php endforeach; ?>
-                   <!-- <tr style="background-color: white">
-                    <th scope="row">
-                      <img src="images/table-pic.svg" alt="user-pic" />
-                    </th>
-                    <td>username</td>
-                    <td>user@email.com</td>
-                    <td>0612346789</td>
-                    <td>1234567898765</td>
-                    <td>08-Dec,2021</td>
-                    <td style="color: #00c1fe">
-                      <i class="bi bi-pen"></i>
-                      <i class="bi bi-trash"></i>
-                    </td>
-                  </tr> -->
-                  <!--<tr style="background-color: white">
-                    <th scope="row">
-                      <img src="images/table-pic.svg" alt="user-pic" />
-                    </th>
-                    <td>username</td>
-                    <td>user@email.com</td>
-                    <td>0612346789</td>
-                    <td>1234567898765</td>
-                    <td>08-Dec,2021</td>
-                    <td style="color: #00c1fe">
-                      <i class="bi bi-pen"></i>
-                      <i class="bi bi-trash"></i>
-                    </td>
-                  </tr>
-                  <tr style="background-color: white">
-                    <th scope="row">
-                      <img src="images/table-pic.svg" alt="user-pic" />
-                    </th>
-                    <td>username</td>
-                    <td>user@email.com</td>
-                    <td>0612346789</td>
-                    <td>1234567898765</td>
-                    <td>08-Dec,2021</td>
-                    <td style="color: #00c1fe">
-                      <i class="bi bi-pen"></i>
-                      <i class="bi bi-trash"></i>
-                    </td>
-                  </tr> -->
+                  
+              <!-- Add new student -->
+
                 </tbody>
               </table>
             </div>

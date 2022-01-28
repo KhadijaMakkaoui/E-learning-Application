@@ -59,7 +59,8 @@
                     // $json[]= '{"img":"images/table-pic.svg","Name":"test","Email":"test@gmail.com","Phone":"062939393","EnrollNumber":"3892392302019","Date_addmission":"20-Janvier,2022"}';
 
                     $studentsList=json_decode($json,true);
-                    
+                    $index=0;
+                   
                 ?>
                 <?php foreach ($studentsList as $std) : ?>
                   <tr>
@@ -71,10 +72,10 @@
                     <td> <?php echo $std['Date_addmission'] ?></td>
                     <td style="color: #00c1fe">
                       <a href="#" style="color: unset;"><i class="bi bi-pen"></i></a>
-                      <a href="#" style="color: unset;"><i class="bi bi-trash"></i></a>
+                      <a href="Delete.php?index='<?php echo $index ?>'" style="color: unset;"><i class="bi bi-trash"></i></a>
                     </td>
                   </tr>
-                   
+                  <?php  $index=$index+1 ; ?>
                 <?php endforeach; ?>
                   
               <!-- Add new student -->

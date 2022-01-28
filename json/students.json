@@ -5,5 +5,7 @@
     {"img":"images/table-pic.svg","Name":"Ahmed","Email":"ahmed@gmail.com","Phone":"062939393","EnrollNumber":"3892392302019","Date_addmission":"20-Janvier,2022"},
     {"img":"images/table-pic.svg","Name":"Mohammed","Email":"mohammed@gmail.com","Phone":"062939393","EnrollNumber":"3892392302019","Date_addmission":"20-Janvier,2022"},
     {"img":"images/table-pic.svg","Name":"Sara","Email":"sara@gmail.com","Phone":"062939393","EnrollNumber":"3892392302019","Date_addmission":"20-Janvier,2022"},
-    {"img":"images/table-pic.svg","Name":"Samira","Email":"samira@gmail.com","Phone":"062939393","EnrollNumber":"3892392302019","Date_addmission":"20-Janvier,2022"}
+    {"img":"images/table-pic.svg","Name":"Samira","Email":"samira@gmail.com","Phone":"062939393","EnrollNumber":"3892392302019","Date_addmission":"20-Janvier,2022"},
+    {"img":"images/table-pic.svg","Name":"test","Email":"test@gmail.com","Phone":"062939393","EnrollNumber":"3892392302019","Date_addmission":"20-Janvier,2022"}
+    
 ]

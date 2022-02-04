@@ -3,11 +3,11 @@
 $sidebar=<<<sidebar
 <div class="col-2 col-md-3 col-xl-2 px-0 vh-100 background-sidebar">
 <div class="">
-    <img src="/images/logo_eclass.png" class="img-fluid" id="img-logo" alt="logo" />
+    <img src="./images/logo_eclass.png" class="img-fluid" id="img-logo" alt="logo" />
 </div>
 <div class="d-flex flex-column align-items-center ">
     <div class="text-center mt-4">
-        <img src="/images/img-youcode.png" class="w-50 rounded-circle" id="img-profile"
+        <img src="./images/img-youcode.png" class="w-50 rounded-circle" id="img-profile"
             alt="profile picture" />
     </div>
     <div class="text-center mt-1">

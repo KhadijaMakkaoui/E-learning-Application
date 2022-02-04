@@ -33,7 +33,7 @@
                 <a href="#" class="link-info "
                   ><i class="bi bi-arrow-down-up"></i
                 ></a>
-                <a href="Addstudent.php" class="link-light bg-info rounded-2 px-2">
+                <a href="#" class="link-light bg-info rounded-2 px-2">
                 <i class="bi bi-person-plus-fill"></i>
                 </a>
               </div>
@@ -54,13 +54,9 @@
                 <tbody class="bg-white">
                   <!-- Afficher la list des apprenants -->
                   <?php
-                    //  include './Component/ListStudents.php';
                     $json = file_get_contents('./json/students.json');
-                    // $json[]= '{"img":"images/table-pic.svg","Name":"test","Email":"test@gmail.com","Phone":"062939393","EnrollNumber":"3892392302019","Date_addmission":"20-Janvier,2022"}';
 
-                    $studentsList=json_decode($json,true);
-                    $index=0;
-                   
+                    $studentsList=json_decode($json,true);                   
                 ?>
                 <?php foreach ($studentsList as $std) : ?>
                   <tr>
@@ -72,10 +68,10 @@
                     <td> <?php echo $std['Date_addmission'] ?></td>
                     <td style="color: #00c1fe">
                       <a href="#" style="color: unset;"><i class="bi bi-pen"></i></a>
-                      <a href="Delete.php?index='<?php echo $index ?>'" style="color: unset;"><i class="bi bi-trash"></i></a>
+                      <a href="#" style="color: unset;"><i class="bi bi-trash"></i></a>
                     </td>
                   </tr>
-                  <?php  $index=$index+1 ; ?>
+                  
                 <?php endforeach; ?>
                   
               <!-- Add new student -->

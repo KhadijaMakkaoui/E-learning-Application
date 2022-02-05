@@ -54,21 +54,21 @@
               </thead>
               <tbody>
                 <?php
-                //  include './Component/ListPayment.php';
-                $json = file_get_contents('./json/payments.json');
-                $payementList = json_decode($json);
-                ?>
-                <?php foreach ($payementList as $detail) : ?>
+                 include "./include_Mysql/connection.php";
+                 $arr_payments= mysqli_query($conn,"SELECT * FROM students");
+                 while ($p = mysqli_fetch_array($arr_payments)) : ?>
                   <tr>
-
-                    <?php foreach ($detail as $key => $value) : ?>
-                      <td> <?php echo $value ?></td>
-                    <?php endforeach; ?>
+                      <td> <?php echo $p['Name'] ?></td>
+                      <td> <?php echo $p['schedual'] ?></td>
+                      <td> <?php echo $p['Bill'] ?></td>
+                      <td> <?php echo $p['Amount'] ?></td>
+                      <td> <?php echo $p['Balance'] ?></td>
+                      <td> <?php echo $p['Date_addmission'] ?></td>
 
                     <td style="color: #00c1fe"> <i class="bi bi-eye"></i></td>
                   </tr>
                    
-                <?php endforeach; ?>
+                <?php endwhile; ?>
               </tbody>
             </table>
           </div>

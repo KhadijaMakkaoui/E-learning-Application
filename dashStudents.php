@@ -54,17 +54,15 @@
                 <tbody class="bg-white">
                   <!-- Afficher la list des apprenants -->
                   <?php
-                    $json = file_get_contents('./json/students.json');
-
-                    $studentsList=json_decode($json,true);                   
-                ?>
-                <?php foreach ($studentsList as $std) : ?>
+                include "./include_Mysql/connection.php";
+                  $arr_students= mysqli_query($conn,"SELECT * FROM students");
+                  while ($std = mysqli_fetch_array($arr_students)) :?>
                   <tr>
-                    <td><img src="<?php echo $std['img'] ?>" alt="image student"></td>
+                    <td><img src="images/<?php echo $std['img_src'] ?>" alt="image student"></td>
                     <td> <?php echo $std['Name'] ?></td>
                     <td> <?php echo $std['Email'] ?></td>
                     <td> <?php echo $std['Phone'] ?></td>
-                    <td> <?php echo $std['EnrollNumber'] ?></td>
+                    <td> <?php echo $std['Enroll_Number'] ?></td>
                     <td> <?php echo $std['Date_addmission'] ?></td>
                     <td style="color: #00c1fe">
                       <a href="#" style="color: unset;"><i class="bi bi-pen"></i></a>
@@ -72,9 +70,7 @@
                     </td>
                   </tr>
                   
-                <?php endforeach; ?>
-                  
-              <!-- Add new student -->
+                <?php endwhile; ?>
 
                 </tbody>
               </table>

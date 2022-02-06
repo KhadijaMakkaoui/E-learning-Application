@@ -20,23 +20,23 @@
                                 <input type="text" name="Name" class="form-control" placeholder="Enter Name..." required="">
                             </div><!-- form-group -->
                             <div class="form-group mb-2">
-                                <input type="text" name="Email" class="form-control" placeholder="Enter Email..." required="">
+                                <input type="email" name="Email" class="form-control" placeholder="Enter Email..." required="">
                             </div><!-- form-group -->
                             <div class="form-group mb-2">
                                 <input type="text" name="Phone" class="form-control" placeholder="Enter Phone..." required="">
                             </div><!-- form-group -->
                             <div class="form-group mb-2">
-                                <input type="text" name="Enroll_Number" class="form-control" placeholder="Enter Enroll Number..." required="">
+                                <input type="number" name="Enroll_Number" class="form-control" placeholder="Enter Enroll Number..." required="" min="1">
                             </div><!-- form-group -->
                             <div class="form-group mb-2">
-                                <input type="text" name="Date_addmission" class="form-control" placeholder="Enter Date addmission..." required="">
+                                <input type="date" name="Date_addmission" class="form-control" placeholder="Enter Date addmission..." required="">
                             </div>
 
 
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary btn-info">Add</button>
+                        <button type="submit" class="btn btn-primary btn-info text-white">Add</button>
                     </div>
                     </form>
                 </div>

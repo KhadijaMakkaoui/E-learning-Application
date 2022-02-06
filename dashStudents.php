@@ -65,8 +65,8 @@
                     <td> <?php echo $std['Enroll_Number'] ?></td>
                     <td> <?php echo $std['Date_addmission'] ?></td>
                     <td style="color: #00c1fe">
-                      <a href="#" style="color: unset;"><i class="bi bi-pen"></i></a>
-                      <a href="#" style="color: unset;"><i class="bi bi-trash"></i></a>
+                      <a href="update.php?Enroll_Number=<?php echo $std['Enroll_Number']; ?>" style="color: unset;"><i class="bi bi-pen"></i></a>
+                      <a href="delete.php?Enroll_Number=<?php echo $std['Enroll_Number']; ?>" style="color: unset;"><i class="bi bi-trash"></i></a>
                     </td>
                   </tr>
                   

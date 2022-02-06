@@ -55,9 +55,9 @@
               <tbody>
                 <?php
                  include "./include_Mysql/connection.php";
-                 $arr_payments= mysqli_query($conn,"SELECT * FROM students");
+                 $arr_payments= mysqli_query($conn,"SELECT * FROM payment_details");
                  while ($p = mysqli_fetch_array($arr_payments)) : ?>
-                  <tr>
+                  <tr> 
                       <td> <?php echo $p['Name'] ?></td>
                       <td> <?php echo $p['schedual'] ?></td>
                       <td> <?php echo $p['Bill'] ?></td>

@@ -33,27 +33,13 @@
             <h3 class=" ">Students List</h3>
             <div class="">
               <a href="#" class="link-info "><i class="bi bi-arrow-down-up"></i></a>
-              <a href="#" class="link-light bg-info rounded-2 px-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <a href="#" class="link-light bg-info rounded-2 px-2" data-bs-toggle="modal" data-bs-target="#AddForm">
                 <i class="bi bi-person-plus-fill"></i>
               </a>
-              <?php include "./include_Mysql/connection.php";
+              <?php
+              include "./include_Mysql/connection.php";
               include 'add.php';
-
-              if (isset($_POST['submit'])) {
-                $student_name    = $_POST['Name'];
-                $student_email   = $_POST['Email'];
-                $student_phone   = $_POST['Phone'];
-                $student_num     = $_POST['Enroll_Number'];
-                $date            = $_POST['Date_addmission'];
-
-                $Query = mysqli_query($conn, "INSERT INTO students VALUES ('$student_name','$student_email', '$student_phone',$student_num,'$date','')");
-                if ($Query) {
-                  echo "<script>alert('Student record is successfully inserted!')</script>";
-                } else {
-                  echo "<script>alert('Sorry an error occured!')</script>";
-                }
-              }
-
+              include 'delete.php';
               ?>
 
             </div>

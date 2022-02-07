@@ -1,12 +1,24 @@
+<?php include "./include_Mysql/connection.php";
 
+              if (isset($_POST['submit'])) {
+                $student_name         = $_POST['Name'];
+                $student_email   = $_POST['Email'];
+                $student_phone   = $_POST['Phone'];
+                $student_num     = $_POST['Enroll_Number'];
+                $date            = $_POST['Date_addmission'];
+
+                $Query = mysqli_query($conn, "INSERT INTO students VALUES ('$student_name','$student_email', '$student_phone',$student_num,'$date','')");
+                if ($Query) {
+                  echo "<script>alert('Student record is successfully inserted!')</script>";
+                } else {
+                  echo "<script>alert('Sorry an error occured!')</script>";
+                }
+              }
+
+              ?>
     <div class="container" >
-        <!-- Button trigger modal -->
-        <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Launch demo modal
-        </button> -->
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" aria-labelledby="addForm" aria-hidden="true">
+    
+        <div class="modal fade" id="AddForm" aria-labelledby="addForm" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">

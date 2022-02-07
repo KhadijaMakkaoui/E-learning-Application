@@ -21,6 +21,7 @@
       $activeHome = NULL;
       $activeStudent = "active";
       $activePay = NULL;
+      $activeCourses=NULL;
       include 'Component/sidebar.php';
       ?>
       <!--        content area         -->

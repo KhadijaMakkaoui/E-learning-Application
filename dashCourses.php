@@ -31,7 +31,7 @@
         ?>
         <main class="row mx-1" style="background-color: #f8f8f8">
           <div class="border-bottom d-flex justify-content-between mt-2">
-            <h3 class=" ">Students List</h3>
+            <h3 class=" ">Courses List</h3>
             <div class="">
               <a href="#" class="link-info "><i class="bi bi-arrow-down-up"></i></a>
               <a href="#" class="link-light bg-info rounded-2 px-2" data-bs-toggle="modal" data-bs-target="#AddForm">
@@ -39,8 +39,7 @@
               </a>
               <?php
               include "./include_Mysql/connection.php";
-              include 'add.php';
-              include 'delete.php';
+              
               ?>
 
             </div>
@@ -49,12 +48,9 @@
             <table class="table ">
               <thead class="text-secondary">
                 <tr>
-                  <th scope="col"></th>
-                  <th scope="col">Name</th>
-                  <th scope="col">Email</th>
-                  <th scope="col">Phone</th>
-                  <th scope="col">Enroll Number</th>
-                  <th scope="col">Date of admission</th>
+                  <th scope="col">Id</th>
+                  <th scope="col">Title</th>
+                  <th scope="col">Description</th>
                   <th scope="col"></th>
                 </tr>
               </thead>
@@ -62,19 +58,13 @@
                 <!-- Afficher la list des apprenants -->
                 <?php
                 include "./include_Mysql/connection.php";
-                $arr_students = mysqli_query($conn, "SELECT * FROM students");
-                while ($std = mysqli_fetch_array($arr_students)) : ?>
+                $arr_courses = mysqli_query($conn, "SELECT * FROM courses");
+                while ($course = mysqli_fetch_array($arr_courses)) : ?>
                   <tr>
-                    <td><img src="images/<?php echo $std['img_src'] ?>" alt="image student"></td>
-                    <td> <?php echo $std['Name'] ?></td>
-                    <td> <?php echo $std['Email'] ?></td>
-                    <td> <?php echo $std['Phone'] ?></td>
-                    <td> <?php echo $std['Enroll_Number'] ?></td>
-                    <td> <?php echo $std['Date_addmission'] ?></td>
-                    <td style="color: #00c1fe">
-                      <a href="update.php?Enroll_Number=<?php echo $std['Enroll_Number']; ?>" style="color: unset;"><i class="bi bi-pen"></i></a>
-                      <a href="delete.php?Enroll_Number=<?php echo $std['Enroll_Number']; ?>" style="color: unset;"><i class="bi bi-trash"></i></a>
-                    </td>
+                    <td> <?php echo $course['id'] ?></td>
+                    <td> <?php echo $course['title'] ?></td>
+                    <td> <?php echo $course['description'] ?></td>
+                    
                   </tr>
 
                 <?php endwhile; ?>

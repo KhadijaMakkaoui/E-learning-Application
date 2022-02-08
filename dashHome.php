@@ -30,27 +30,35 @@
             <div class="col">
             <?php
             include 'Component/header.php';
+            include "./include_Mysql/connection.php";
+                $Pay = mysqli_query($conn, "SELECT SUM(Amount) FROM payment_details");
+                $sumPay = mysqli_fetch_array($Pay);
+                $std = mysqli_query($conn, "SELECT COUNT(Enroll_Number) FROM students;");
+                $sumStd = mysqli_fetch_array($std);
+                $Courses = mysqli_query($conn, "SELECT SUM(Amount) FROM payment_details");
+                $sumCou = mysqli_fetch_array($Courses);
+               
             ?>
                 <main class="row mx-2 mt-4 justify-content-evenly overflow-auto" style="max-height: 350px;">
                     <div class="card" style="width: 225px;height: 157px;" id="card-student">
                         <div class="card-body d-flex flex-column">
                             <i class="fs-1 bi-mortarboard" style="color: #74C1ED;"></i>
                             <h6 class="card-subtitle mb-2 text-secondary">Students</h6>
-                            <h3 class="align-self-end">243</h3>
+                            <h3 class="align-self-end"><?php echo $sumStd[0]; ?></h3>
                         </div>
                     </div>
                     <div class="card" style="width: 225px;height: 157px;" id="card-course">
                         <div class="card-body d-flex flex-column">
                             <i class="fs-1 bi-bookmark" style="color: #EE95C5;"></i>
                             <h5 class="card-subtitle mb-2 text-secondary">Course</h5>
-                            <h3 class="align-self-end">13</h3>
+                            <h3 class="align-self-end"><?php echo $sumCou[0]; ?></h3>
                         </div>
                     </div>
                     <div class="card" style="width: 225px; height: 157px;" id="card-pay">
                         <div class="card-body d-flex flex-column">
                             <i class="fs-1 bi-currency-dollar" style="color: #00C1FE;"></i>
                             <h6 class="card-subtitle mb-2 text-secondary">Payments</h6>
-                            <h3 class="align-self-end">556,000 DHS</h3>
+                            <h3 class="align-self-end"> <?php echo $sumPay[0]; ?> DHS</h3>
                         </div>
                     </div>
                     <div class="card" style="width: 225px; height: 157px;" id="card-user">

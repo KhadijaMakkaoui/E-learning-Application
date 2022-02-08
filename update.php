@@ -1,28 +1,32 @@
 <?php include "./include_Mysql/connection.php"; ?>
 <!-- //Recuperer les données de l'index selectionné -->
-    <?php $id = $_GET['Enroll_Number']; ?>
-    <?php $query = mysqli_query($conn, "SELECT * FROM students WHERE Enroll_Number = '$id' ");
-    $r = mysqli_fetch_array($query);
-    $student_name    = $r['Name'];
-    $student_email   = $r['Email'];
-    $student_phone   = $r['Phone'];
-    $date            = $r['Date_addmission'];
-    ?>
-<?php 
+<?php $id = $_GET['Enroll_Number']; ?>
+<?php $query = mysqli_query($conn, "SELECT * FROM students WHERE Enroll_Number = '$id' ");
+$r = mysqli_fetch_array($query);
+$student_name    = $r['Name'];
+$student_email   = $r['Email'];
+$student_phone   = $r['Phone'];
+$date            = $r['Date_addmission'];
+$img_src         = $r['img_src'];
+
+?>
+<?php
 //Effectue l'operation de UPDATE
-if(isset($_POST['submit_update'])){
+if (isset($_POST['submit_update'])) {
     $student_name    = $_POST['Name'];
     $student_email   = $_POST['Email'];
     $student_phone   = $_POST['Phone'];
     $date            = $_POST['Date_addmission'];
-    $query      = mysqli_query($conn, "UPDATE students SET Name = '$student_name' ,Email = '$student_email', Phone = '$student_phone', Date_addmission = '$date' WHERE Enroll_Number = '$id'");
-  if ($query) {
-    header("location: dashStudents.php");
-  }else{
-    echo "<script>alert('Sorry update query not work')</script>";
-  }
+    $img_src         = $_POST['img_src'];
+
+    $query      = mysqli_query($conn, "UPDATE students SET Name = '$student_name' ,Email = '$student_email', Phone = '$student_phone', Date_addmission = '$date', img_src= '$img_src' WHERE Enroll_Number = '$id'");
+    if ($query) {
+        header("location: dashStudents.php");
+    } else {
+        echo "<script>alert('Sorry update query not work')</script>";
+    }
 }
- ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,18 +50,22 @@ if(isset($_POST['submit_update'])){
 <div class="container">
 
     <form method="POST" action="">
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Select student image</label>
+            <input class="form-control" type="file" id="formFile" name="img_src" required value="<?php echo $img_src ?>>
+        </div>
         <div class="form-group mb-2">
-            <input type="text" name="Name" class="form-control" placeholder="Enter Name..." required="" value="<?php echo $student_name?>">
+            <input type="text" name="Name" class="form-control" placeholder="Enter Name..." required="" value="<?php echo $student_name ?>">
         </div><!-- form-group -->
         <div class="form-group mb-2">
-            <input type="email" name="Email" class="form-control" placeholder="Enter Email..." required="" value="<?php echo $student_email?>">
+            <input type="email" name="Email" class="form-control" placeholder="Enter Email..." required="" value="<?php echo $student_email ?>">
         </div><!-- form-group -->
         <div class="form-group mb-2">
-            <input type="text" name="Phone" class="form-control" placeholder="Enter Phone..." required="" value="<?php echo $student_phone?>">
+            <input type="text" name="Phone" class="form-control" placeholder="Enter Phone..." required="" value="<?php echo $student_phone ?>">
         </div><!-- form-group -->
-       
+
         <div class="form-group mb-2">
-            <input type="date" name="Date_addmission" class="form-control" placeholder="Enter Date addmission..." required="" value="<?php echo $date?>">
+            <input type="date" name="Date_addmission" class="form-control" placeholder="Enter Date addmission..." required="" value="<?php echo $date ?>">
         </div>
         <button type="submit" name="submit_update" class="btn btn-primary btn-info text-white">UPDATE</button>
 

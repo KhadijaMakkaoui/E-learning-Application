@@ -64,8 +64,8 @@
                 include "./include_Mysql/connection.php";
                 $arr_students = mysqli_query($conn, "SELECT * FROM students");
                 while ($std = mysqli_fetch_array($arr_students)) : ?>
-                  <tr>
-                    <td><img src="images/<?php echo $std['img_src'] ?>" alt="image student"></td>
+                  <tr class="align-middle">
+                    <td ><img src="images/<?php echo $std['img_src'] ?>" alt="image student" width="80px"></td>
                     <td> <?php echo $std['Name'] ?></td>
                     <td> <?php echo $std['Email'] ?></td>
                     <td> <?php echo $std['Phone'] ?></td>

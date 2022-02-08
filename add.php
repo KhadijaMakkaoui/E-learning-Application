@@ -4,10 +4,9 @@ if (isset($_POST['submit'])) {
     $student_name    = $_POST['Name'];
     $student_email   = $_POST['Email'];
     $student_phone   = $_POST['Phone'];
-    $student_num     = $_POST['Enroll_Number'];
     $date            = $_POST['Date_addmission'];
     $img_src         = $_POST['img_src'];
-    $Query = mysqli_query($conn, "INSERT INTO students VALUES ('$student_name','$student_email', '$student_phone',$student_num,'$date','$img_src')");
+    $Query = mysqli_query($conn, "INSERT INTO students(Name, Email, Phone, Date_addmission, img_src) VALUES ('$student_name','$student_email', '$student_phone','$date','$img_src')");
     if ($Query) {
         echo "<script>alert('Student record is successfully inserted!')</script>";
     } else {
@@ -41,12 +40,8 @@ if (isset($_POST['submit'])) {
                             <input type="text" name="Phone" class="form-control" placeholder="Enter Phone..." required="">
                         </div><!-- form-group -->
                         <div class="form-group mb-2">
-                            <input type="number" name="Enroll_Number" class="form-control" placeholder="Enter Enroll Number..." required="" min="1">
-                        </div><!-- form-group -->
-                        <div class="form-group mb-2">
                             <input type="date" name="Date_addmission" class="form-control" placeholder="Enter Date addmission..." required="">
                         </div>
-
 
                 </div>
                 <div class="modal-footer">

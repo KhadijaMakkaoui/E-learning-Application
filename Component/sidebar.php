@@ -26,7 +26,7 @@ $sidebar=<<<sidebar
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#submenu1" data-bs-toggle="collapse"
+                <a href="./dashCourses.php" data-bs-toggle="collapse"
                     class="nav-link px-0 align-middle link-dark $activeCourses">
                     <i class="fs-6 bi-bookmark"></i> <span class="d-none d-sm-inline">Course</span>
                 </a>

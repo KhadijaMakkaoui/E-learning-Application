@@ -1,6 +1,6 @@
 <?php
-
-$sidebar=<<<sidebar
+session_start();
+?>
 <div class="col-2 col-md-3 col-xl-2 px-0 vh-100 background-sidebar">
 <div class="">
     <img src="./images/logo_eclass.png" class="img-fluid" id="img-logo" alt="logo" />
@@ -11,7 +11,7 @@ $sidebar=<<<sidebar
             alt="profile picture" />
     </div>
     <div class="text-center mt-1">
-        <h5 class="d-none d-sm-inline">Admin name</h5>
+        <h5 class="d-none d-sm-inline"><?php echo $_SESSION['userName']; ?></h5>
         <h6 class="text-info fs">Admin</h6>
     </div>
     <div class="small">
@@ -20,25 +20,25 @@ $sidebar=<<<sidebar
 
             <li class="nav-item">
 
-                <a href="./dashHome.php" class="nav-link align-middle px-0  link-dark $activeHome">
+                <a href="./dashHome.php" class="nav-link align-middle px-0  link-dark <?php echo $activeHome ?>">
                     <i class="fs-6 bi-house"></i>
                     <span class="d-none d-sm-inline">Home</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="./dashCourses.php" data-bs-toggle="collapse"
-                    class="nav-link px-0 align-middle link-dark $activeCourses">
+                    class="nav-link px-0 align-middle link-dark <?php echo $activeCourses ?>">
                     <i class="fs-6 bi-bookmark"></i> <span class="d-none d-sm-inline">Course</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="./dashStudents.php" class="nav-link px-0 align-middle link-dark $activeStudent">
+                <a href="./dashStudents.php" class="nav-link px-0 align-middle link-dark <?php echo $activeStudent ?>">
                     <i class="fs-6 bi-mortarboard"></i> <span
                         class="ms-1 d-none d-sm-inline">Students</span></a>
             </li>
             <li class="nav-item">
                 <a href="./dashPayment.php" data-bs-toggle="collapse"
-                    class="nav-link px-0 align-middle link-dark $activePay">
+                    class="nav-link px-0 align-middle link-dark <?php echo $activePay ?>">
                     <i class="fs-6 bi-currency-dollar"></i> <span
                         class="ms-1 d-none d-sm-inline">Payment</span>
                 </a>
@@ -65,6 +65,4 @@ $sidebar=<<<sidebar
     </div>
 </div>
 </div>
-sidebar;
-echo $sidebar;
-?>
+

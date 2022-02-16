@@ -35,7 +35,7 @@
                 $sumPay = mysqli_fetch_array($Pay);
                 $std = mysqli_query($conn, "SELECT COUNT(Enroll_Number) FROM students;");
                 $sumStd = mysqli_fetch_array($std);
-                $Courses = mysqli_query($conn, "SELECT SUM(Amount) FROM payment_details");
+                $Courses = mysqli_query($conn, "SELECT SUM(id) FROM courses");
                 $sumCou = mysqli_fetch_array($Courses);
                 $comptes = mysqli_query($conn, "SELECT COUNT(id) FROM comptes;");
                 $sumCpt = mysqli_fetch_array($comptes);

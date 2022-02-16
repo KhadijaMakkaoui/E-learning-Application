@@ -37,7 +37,8 @@
                 $sumStd = mysqli_fetch_array($std);
                 $Courses = mysqli_query($conn, "SELECT SUM(Amount) FROM payment_details");
                 $sumCou = mysqli_fetch_array($Courses);
-               
+                $comptes = mysqli_query($conn, "SELECT COUNT(id) FROM comptes;");
+                $sumCpt = mysqli_fetch_array($comptes);
             ?>
                 <main class="row mx-2 mt-4 justify-content-evenly overflow-auto" style="max-height: 350px;">
                     <div class="card" style="width: 225px;height: 157px;" id="card-student">
@@ -65,7 +66,7 @@
                         <div class="card-body d-flex flex-column">
                             <i class="fs-1 bi-person text-light"></i>
                             <h6 class="card-subtitle mb-2 text-light">Users</h6>
-                            <h3 class="align-self-end">3</h3>
+                            <h3 class="align-self-end"><?php echo $sumCpt[0]; ?></h3>
                         </div>
                     </div>
                 </main>

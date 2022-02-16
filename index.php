@@ -5,28 +5,48 @@ session_start();
 
 ?>
 <?php
+require './include_Mysql/connection.php';
 require 'validate.php';
-$errMessage=$resultE = $resultP = $email_email = $err_email = $err_pass = "";
-$visibility="d-none";
+$errMessage = $resultE = $resultP = "";
+$visibility = "d-none";
 
-$pattern = "^[A-Za-z0-9_.]+@[a-zA-Z]+.[a-zA-Z]$^";
+$pattern = "/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $visibility = "d-none";
+  $isvalide = false;
   $email_val = $_POST['Email'];
   $pass_val = $_POST['Pass'];
   if (empty($email_val) || empty($pass_val)) {
     $errMessage = "BOTH FIELDS ARE REQUIRED";
-    $visibility="";
+    $visibility = "";
   } else {
     if (!preg_match($pattern, $email_val)) {
       $errMessage = "PLEASE ENTER A VALID EMAIL";
-      $visibility="";
+      $visibility = "";
     } else {
-      
       $resultE = input_test($email_val);
+      $resultP = input_test($pass_val);
+      $isvalide = true;
+      $visibility = "d-none";
     }
-    $resultP = input_test($pass_val);
   }
-
+  if ($isvalide) {
+    //Sécuriser les données à integrer dans la requete
+    $userEmail = mysqli_real_escape_string($conn, $resultE);
+    $userPass = mysqli_real_escape_string($conn, $resultP);
+    $query = "SELECT * FROM comptes WHERE email= '$userEmail' AND mdp='$userPass'";
+    $result = mysqli_query($conn, $query);
+    $row = mysqli_fetch_array($result);
+    //$userId = $row[0];
+    $count = mysqli_num_rows($result);
+    if ($count == 1) {
+      $_SESSION['login_email'] = $userEmail;
+      header("location: dashHome.php");
+    } else {
+      $errMessage = "Your Email or Password is invalid";
+      $visibility = "";
+    }
+  }
 }
 
 ?>
@@ -58,25 +78,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             Enter your credentials to access your account
           </p>
         </div>
-        <div class="alert alert-danger <?php  echo $visibility?>" role="alert">
-           <?php  echo $errMessage?>
+        <div class="alert alert-danger <?php echo $visibility ?>" role="alert">
+          <?php echo $errMessage ?>
         </div>
         <div class="mb-4">
           <label for="exampleInputEmail1" class="form-label">Email address
             <span class="text-danger">*</span>
           </label>
-          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter your email" name="Email" value="<?php echo $resultE ?>" />
+          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter your email" name="Email" value="<?php echo $email_val ?>" />
           <!-- required -->
-          <span class="text-danger"><?php echo $err_email ?></span>
+          <span class="text-danger"><?php #echo $err_email 
+                                    ?></span>
         </div>
         <div class="mb-4">
           <label for="exampleInputPassword1" class="form-label">Password
             <span class="text-danger">*</span>
           </label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter your password" name="Pass" value="" />
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter your password" name="Pass" value="<?php echo $pass_val ?>" />
           <!-- required -->
-          <span class="text-danger" name="pass_err"><?php echo $err_pass ?></span>
-
+       
         </div>
         <div class="d-grid mb-4">
           <button type="submit" class="btn btn-info text-white">

@@ -2,15 +2,16 @@
 <html lang="en">
 <?php
 session_start();
-
 ?>
 <?php
 require './include_Mysql/connection.php';
 require 'validate.php';
-$errMessage = $resultE = $resultP = "";
+
+$errMessage = $resultE = $resultP = $email_val = $pass_val = "";
 $visibility = "d-none";
 
-$pattern = "/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix";
+$pattern = "/^([a-z0-9_\-]+)(\.[a-z0-9_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/i";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $visibility = "d-none";
   $isvalide = false;
@@ -37,13 +38,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $query = "SELECT * FROM comptes WHERE email= '$userEmail' AND mdp='$userPass'";
     $result = mysqli_query($conn, $query);
     $row = mysqli_fetch_array($result);
-    //$userId = $row[0];
+
     $count = mysqli_num_rows($result);
     if ($count == 1) {
       $_SESSION['login_email'] = $userEmail;
+      $_SESSION['userName'] = $row['user_name'];
       header("location: dashHome.php");
     } else {
-      $errMessage = "Your Email or Password is invalid";
+      $errMessage = "Your Email or Password is Incorrect";
       $visibility = "";
     }
   }
@@ -96,7 +98,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           </label>
           <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter your password" name="Pass" value="<?php echo $pass_val ?>" />
           <!-- required -->
-       
+
+        </div>
+        <div class="form-group mb-4">
+          <label class="form-check-label"><input type="checkbox"> Remember me</label>
         </div>
         <div class="d-grid mb-4">
           <button type="submit" class="btn btn-info text-white">

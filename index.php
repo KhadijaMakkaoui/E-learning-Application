@@ -48,12 +48,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($count == 1) {
       $_SESSION['userName'] = $row['user_name'];
       $_SESSION['isLogin'] = true;
+      //Logout après 24h
+      $_SESSION['expireTime'] = time()+(24*60*60);
 
       header("location: dashHome.php");
     } else {
       $errMessage = "Your Email or Password is Incorrect";
       $visibility = "";
-      // $_SESSION['isLogin'] = false;
+
     }
   }
 }

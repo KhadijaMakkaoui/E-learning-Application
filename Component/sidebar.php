@@ -56,7 +56,7 @@ session_start();
                 </a>
             </li>
             <li class="nav-item">
-                <a href="index.html" data-bs-toggle="collapse"
+                <a href="logout.php" data-bs-toggle="collapse"
                     class="nav-link px-0 align-middle  link-dark align-self-end">
                     <i class="fs-6 bi-box-arrow-right "></i>
                     <span class=" d-none d-sm-inline">Log out</span> </a>

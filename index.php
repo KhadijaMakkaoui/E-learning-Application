@@ -37,12 +37,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $userPass = mysqli_real_escape_string($conn, $resultP);
     $query = "SELECT * FROM comptes WHERE email= '$userEmail' AND mdp='$userPass'";
     $result = mysqli_query($conn, $query);
+    if(!$result){
+      die("SQL query failed: " . mysqli_error($conn));
+   }
     $row = mysqli_fetch_array($result);
 
     $count = mysqli_num_rows($result);
+
     if ($count == 1) {
-      $_SESSION['login_email'] = $userEmail;
+      // $_SESSION['login_email'] = $userEmail;
       $_SESSION['userName'] = $row['user_name'];
+      $_SESSION['Login'] = true;
+
       header("location: dashHome.php");
     } else {
       $errMessage = "Your Email or Password is Incorrect";
@@ -116,7 +122,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div> -->
           <span>
             Forgot your password?
-            <a href="#" class="link-info">Reset Password</a>
+            <a href="dashHome.php" class="link-info">Reset Password</a>
           </span>
         </div>
       </form>

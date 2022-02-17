@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 ?>
 <div class="col-2 col-md-3 col-xl-2 px-0 vh-100 background-sidebar">
 <div class="">

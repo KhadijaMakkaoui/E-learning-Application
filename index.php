@@ -1,8 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
 <?php
 session_start();
 ?>
+<!DOCTYPE html>
+<html lang="en">
+
 <?php
 require './include_Mysql/connection.php';
 require 'validate.php';
@@ -45,14 +46,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $count = mysqli_num_rows($result);
 
     if ($count == 1) {
-      // $_SESSION['login_email'] = $userEmail;
       $_SESSION['userName'] = $row['user_name'];
-      $_SESSION['Login'] = true;
+      $_SESSION['isLogin'] = true;
 
       header("location: dashHome.php");
     } else {
       $errMessage = "Your Email or Password is Incorrect";
       $visibility = "";
+      // $_SESSION['isLogin'] = false;
     }
   }
 }

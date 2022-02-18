@@ -13,6 +13,11 @@ $visibility = "d-none";
 
 $pattern = "/^([a-z0-9_\-]+)(\.[a-z0-9_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/i";
 
+if(isset($_COOKIE['email'])){
+  $email_val=$_COOKIE['email'];
+  $pass_val=$_COOKIE['password'];
+
+}
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $visibility = "d-none";
   $isvalide = false;
@@ -50,6 +55,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $_SESSION['isLogin'] = true;
       //Logout après 24h
       $_SESSION['expireTime'] = time()+(24*60*60);
+      
+      if(!empty($_POST["rememberme"])){
+        setcookie("email",$userEmail,time()+365*12*30*24*60*60);
+        setcookie("password",$userPass,time()+365*12*30*24*60*60);
+      }
+      
 
       header("location: dashHome.php");
     } else {
@@ -110,7 +121,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         </div>
         <div class="form-group mb-4">
-          <label class="form-check-label"><input type="checkbox"> Remember me</label>
+          <label class="form-check-label"><input type="checkbox" name="rememberme"> Remember me</label>
         </div>
         <div class="d-grid mb-4">
           <button type="submit" class="btn btn-info text-white">

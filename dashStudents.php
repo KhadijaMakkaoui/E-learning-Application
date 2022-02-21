@@ -66,7 +66,9 @@ include 'checkLogin.php';
                 <!-- Afficher la list des apprenants -->
                 <?php
                 include "./include_Mysql/connection.php";
+                
                 $arr_students = mysqli_query($conn, "SELECT * FROM students");
+                //Récupère la ligne suivante  sous forme numeric ou assoc
                 while ($std = mysqli_fetch_array($arr_students)) : ?>
                   <tr class="align-middle">
                     <td ><img src="images/<?php echo $std['img_src'] ?>" alt="image student" width="80px"></td>

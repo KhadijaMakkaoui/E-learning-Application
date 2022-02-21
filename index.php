@@ -11,13 +11,14 @@ require 'validate.php';
 $errMessage = $resultE = $resultP = $email_val = $pass_val = "";
 $visibility = "d-none";
 
-$pattern = "/^([a-z0-9_\-]+)(\.[a-z0-9_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/i";
-
+$pattern = "/^([a-z0-9_-]+)(\.[a-z0-9_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/i";
+//Rember me
 if(isset($_COOKIE['email'])){
   $email_val=$_COOKIE['email'];
   $pass_val=$_COOKIE['password'];
 
 }
+//Validation
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $visibility = "d-none";
   $isvalide = false;
@@ -38,16 +39,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   }
   if ($isvalide) {
-    //Sécuriser les données à integrer dans la requete
+    //Échappe les caractères spéciaux dans une chaîne à utiliser dans une instruction SQL
     $userEmail = mysqli_real_escape_string($conn, $resultE);
     $userPass = mysqli_real_escape_string($conn, $resultP);
     $query = "SELECT * FROM comptes WHERE email= '$userEmail' AND mdp='$userPass'";
     $result = mysqli_query($conn, $query);
     if(!$result){
+      //Returns a string description of the last error
       die("SQL query failed: " . mysqli_error($conn));
    }
     $row = mysqli_fetch_array($result);
-
+   //Avoir le nombre de ligne dans un resultat
     $count = mysqli_num_rows($result);
 
     if ($count == 1) {

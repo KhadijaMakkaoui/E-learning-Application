@@ -132,15 +132,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
         <div class="mb-4 text-center">
-          <!-- <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div> -->
           <span>
             Forgot your password?
             <a href="dashHome.php" class="link-info">Reset Password</a>
           </span>
         </div>
+        <hr>
+        <div class="mb-2 text-center">
+           OR          
+        </div>
+        <div class="mb-2 text-center">
+          <span>Create your account</span>
+        <a href="signup.php" class="link-info">SIGN UP</a>          
+        </div>
+
       </form>
     </div>
   </div>

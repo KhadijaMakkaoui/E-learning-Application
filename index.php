@@ -102,9 +102,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             Enter your credentials to access your account
           </p>
         </div>
+        <!-- Message d'erreur -->
         <div class="alert alert-danger <?php echo $visibility ?>" role="alert">
           <?php echo $errMessage ?>
         </div>
+        <!-- Email adress -->
         <div class="mb-4">
           <label for="exampleInputEmail1" class="form-label">Email address
             <span class="text-danger">*</span>
@@ -145,7 +147,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <span>Create your account</span>
         <a href="signup.php" class="link-info">SIGN UP</a>          
         </div>
-
       </form>
     </div>
   </div>
